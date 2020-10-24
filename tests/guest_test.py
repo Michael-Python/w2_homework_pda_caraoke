@@ -11,4 +11,4 @@ class TestGuest(unittest.TestCase):
         self.guest4 = Guest("Wendy")
 
     def test_guest_has_name(self):
-        self.assertEqual(self.guest.first_name, self.guest.create_guest())
+        self.assertEqual(self.guest2.first_name, self.guest2.create_guest())

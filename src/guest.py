@@ -3,4 +3,4 @@ class Guest:
         self.first_name = first_name
         
     def create_guest(self):
-        return "John"
+        return self.first_name
