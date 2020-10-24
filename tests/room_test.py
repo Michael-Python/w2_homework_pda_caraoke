@@ -36,4 +36,5 @@ class TestRoom(unittest.TestCase):
     def test_is_song_added(self):
         new_song = self.song
         self.room.add_song(new_song)
+        self.assertEqual("Waterloo", self.song.title)
         self.assertEqual(1, len(self.room.number_of_songs))
