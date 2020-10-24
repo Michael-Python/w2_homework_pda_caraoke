@@ -9,3 +9,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_is_created(self):
         self.assertEqual("Room 1", self.room.create_room())
+
+    def test_is_room__empty(self):
+        self.assertEqual(0, len(self.room.room_occupants))
