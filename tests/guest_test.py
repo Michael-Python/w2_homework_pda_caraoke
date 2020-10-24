@@ -1,14 +1,13 @@
 import unittest
 
+from src.song import Song
+from src.room import Room
 from src.guest import Guest
 
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest1 = Guest("John")
-        self.guest2 = Guest("Sally")
-        self.guest3 = Guest("Bill")
-        self.guest4 = Guest("Wendy")
-
+        self.guest_1 = Guest("John")
+        
     def test_guest_has_name(self):
-        self.assertEqual(self.guest2.first_name, self.guest2.create_guest())
+        self.assertEqual(self.guest_1.first_name, self.guest_1.create_guest())

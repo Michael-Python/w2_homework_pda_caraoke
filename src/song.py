@@ -6,4 +6,4 @@ class Song:
         self .genre = genre
 
     def add_song(self):
-        return "Waterloo"
+        return self.title
