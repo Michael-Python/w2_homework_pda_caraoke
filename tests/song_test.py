@@ -12,7 +12,7 @@ class TestSong(unittest.TestCase):
         self.song = Song("Waterloo", "Abba", "Disco")
 
     def test_song_is_added(self):
-        # This checks that the title passed to self.song.title ("Waterloo" above) matches with the function in the file song called, create_song
+        # This checks that the title, artist and genre passed to self.song.title ("Waterloo", "Abba", "Disco" above) matches with the function in the file song called, create_song
         self.assertEqual(self.song.title, self.song.add_song())
-
-    
+        self.assertEqual(self.song.artist, self.song.add_artist())
+        self.assertEqual(self.song.genre, self.song.add_genre())

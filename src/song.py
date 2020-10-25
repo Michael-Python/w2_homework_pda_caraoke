@@ -7,3 +7,9 @@ class Song:
 
     def add_song(self):
         return self.title
+
+    def add_artist(self):
+        return self.artist
+
+    def add_genre(self):
+        return self.genre
