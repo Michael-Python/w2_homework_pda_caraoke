@@ -12,9 +12,9 @@ class TestRoom(unittest.TestCase):
         self.guest_3 = Guest("Bill", 15)
         self.guest_4 = Guest("Wendy", 0)
 
-        self.room_1 = Room("Room 1", 0, 0, 4)
-        self.room_3 - Room("Room 2", 0, 0, 5)
-        self.room_3 = Room("Room 3", 0, 0, 62)
+        self.room_1 = Room("Room 1", 10, 4, 0, 0)
+        self.room_3 - Room("Room 2", 20, 5, 0, 0)
+        self.room_3 = Room("Room 3", 15, 6, 0, 0)
 
 
         self.song_1 = Song(1, "Waterloo", "Abba", "Disco")

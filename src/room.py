@@ -1,10 +1,12 @@
 class Room:
 
-    def __init__(self, room_number, max_occupancy):
+    def __init__(self, room_number, room_occupants, fee, max_occupancy,  number_of_songs):
         self.room_number = room_number
+        self.fee = fee
+        self.max_occupancy = max_occupancy
         self.room_occupants = []
         self.number_of_songs = []
-
+        
     def create_room(self):
         return self.room_number
 
