@@ -22,30 +22,23 @@ class Room:
     def add_song_to_list(self, songs):
         # this takes one element from songs and appends the empty list from each song from the loop
         number_of_songs = [self.number_of_songs.append(song) for song in songs]
-            
-    # def put_all_guests_in_room(self, guests):
-    #     self.room_occupants = [self.room_occupants.append(guest) for guest in guests]
-    #     return len(self.room_occupants)
-
-    # def check_if_room_is_full__is_full(self, guests):
-    #     self.room_occupants = []
-    #     for guest in guests:
-    #         if len(self.room_occupants) > self.rooms[0].max_occupancy:
-    #         # if len(self.room_occupants) > 4:
-    #             return("This room is full!")
-    #         else: 
-        #         self.room_occupants.append(guest)
-        # return("There is space available.")
-        
+                  
     def check_if_room_is_full(self, guests):        
         for guest in guests:
             if len(self.room_occupants) > self.max_occupancy:
-            # if len(self.room_occupants) > self.max_occupancy:
-            # if len(self.room_occupants) > 7:
+                print(f"You can only have {self.max_occupancy} guests in {self.room_number}.")
                 return("This room is full!")
             else: 
                 self.room_occupants.append(guest)
+        print(f"There is space for all the guests in {self.room_number}.")
         return("There is space available.")
-        
 
-    
+    def check_if_guests_can_pay(self, guests):
+        for guest in guests:
+            if self.fee > guest.wallet:
+                print(f"You cannot all afford to sing in {self.room_number}.")
+                return "You cannot all afford it." 
+            else:
+                self.room_occupants.append(guest)
+        print(f"Everyone can afford to sing in {self.room_number}.")
+        return "You can all afford it."

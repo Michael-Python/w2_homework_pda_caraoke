@@ -7,9 +7,9 @@ from src.guest import Guest
 class TestRoom(unittest.TestCase):
 
     def setUp(self):
-        self.room_1 = Room("Room 1", 10, 4, 0, 0)
+        self.room_1 = Room("Room 1", 15, 4, 0, 0)
         self.room_2 = Room("Room 2", 20, 5, 0, 0)
-        self.room_3 = Room("Room 3", 15, 7, 0, 0)
+        self.room_3 = Room("Room 3", 10, 7, 0, 0)
 
         self.rooms = [self.room_1, self.room_2, self.room_3]
 
@@ -22,10 +22,10 @@ class TestRoom(unittest.TestCase):
         
         self.songs = [self.song_1, self.song_2, self.song_3, self.song_4, self.song_5, self.song_6]    
 
-        self.guest_1 = Guest("John", 10)
+        self.guest_1 = Guest("John", 18)
         self.guest_2 = Guest("Sally", 20)
         self.guest_3 = Guest("Bill", 15)
-        self.guest_4 = Guest("Wendy", 5)
+        self.guest_4 = Guest("Wendy", 11)
         self.guest_5 = Guest("Tom", 30)
         self.guest_6 = Guest("Becky", 12)
         self.guest_7 = Guest("Sheila", 99)
@@ -64,3 +64,8 @@ class TestRoom(unittest.TestCase):
         # self.assertEqual(len(self.guests), len(self.room_1.room_occupants))        
         self.assertEqual("This room is full!", self.room_1.check_if_room_is_full(self.guests))
         self.assertEqual("There is space available.", self.room_3.check_if_room_is_full(self.guests))
+
+    def test_can_guests_pay_to_enter(self):
+        self.assertEqual("You cannot all afford it.", self.room_1.check_if_guests_can_pay(self.guests))
+        self.assertEqual("You cannot all afford it.", self.room_2.check_if_guests_can_pay(self.guests))
+        self.assertEqual("You can all afford it.", self.room_3.check_if_guests_can_pay(self.guests))
