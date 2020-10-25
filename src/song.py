@@ -4,7 +4,8 @@ class Song:
         self.number = number
         self.title = title
         self.artist = artist
-        self .genre = genre
+        self.genre = genre
+        self.list_of_songs = []
 
     def add_song(self):
         return self.title
