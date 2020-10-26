@@ -12,8 +12,13 @@ class Room:
 
     def add_occupants(self, guest):
         self.room_occupants.append(guest)
+        # for guest in guests:
+        #     self.room_occupants.append(guest) 
 
-    def remove_occupants(self):
+    def remove_occupants(self, guest):
+        self.room_occupants.remove(guest)
+
+    def clear_occupants(self):
         self.room_occupants.clear()
 
     def add_song(self, music):

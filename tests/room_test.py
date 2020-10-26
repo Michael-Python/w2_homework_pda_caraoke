@@ -39,17 +39,25 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(0, len(self.room_1.room_occupants))
 
     def test_is_room__not_empty(self):
-        self.room_1.add_occupants(self.guest_1)
-        self.room_1.add_occupants(self.guest_2)
-        self.room_1.add_occupants(self.guest_3)
-        self.room_1.add_occupants(self.guest_4)
-        self.assertEqual(4, len(self.room_1.room_occupants))
+        self.room_1.add_occupants(self.guests)
+        self.room_1.add_occupants(self.guests)
+        self.room_1.add_occupants(self.guests)
+        # self.room_1.add_occupants(self.guest_3)
+        # self.room_1.add_occupants(self.guest_4)
+        self.assertEqual(3, len(self.room_1.room_occupants))
+
+    def test_is_room__minus_1(self):
+        self.room_1.add_occupants(self.guests)
+        self.room_1.add_occupants(self.guests)
+        self.room_1.add_occupants(self.guests)
+        self.room_1.remove_occupants(self.guests)
+        self.assertEqual(2, len(self.room_1.room_occupants))
 
     def test_is_room__empty_now(self):
-        self.room_1.add_occupants(self.guest_1)
-        self.room_1.remove_occupants()
+        self.room_1.add_occupants(self.guests)
+        self.room_1.add_occupants(self.guests)
+        self.room_1.clear_occupants()
         self.assertEqual(0, len(self.room_1.room_occupants))
-
 
     def test_is_song_added(self):
         self.room_1.add_song(self.songs)
@@ -57,7 +65,7 @@ class TestRoom(unittest.TestCase):
 
     def test_list_had_additions(self):
         self.room_1.add_song_to_list(self.songs)
-        self.assertEqual(len(self.songs), len(self.room_1.number_of_songs))
+        self.assertEqual(6, len(self.room_1.number_of_songs))
 
     def test_how_many_in_room(self):
         # self.room_1.put_all_guests_in_room(self.guests)
